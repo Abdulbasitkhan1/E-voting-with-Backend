@@ -95,71 +95,34 @@ class ProfilePage extends StatelessWidget {
         index: 3,
         backgroundColor: Colors.white60, // Change the background color here
         color: Colors.blueAccent,
-        items: [
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => NextPage(user)
-                ),
-              );
-              // Handle the onTap event for the second item
-            },
-            child: Column(
-              children: [
-                Icon(Icons.home),
-                Text('Home'), // Add label
-              ],
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              // Handle the onTap event for the second item
-            },
-            child: Column(
-
-              children: [
-                Icon(Icons.feed),
-                Text('feed'), // Add label
-              ],
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              // Handle the onTap event for the second item
-            },
-            child: Column(
-
-              children: [
-                Icon(Icons.question_answer_outlined),
-                Text('FAQ'), // Add label
-              ],
-            ),
-          ),
-          InkWell(
-            onTap: () {
-
-              // Handle the onTap event for the second item
-            },
-            child: Column(
-
-              children: [
-                Icon(Icons.person),
-                Text('Profile'), // Add label
-              ],
-            ),
-          ),
-        ],
+        animationDuration: Duration(milliseconds: 300),
         onTap: (index) {
+          switch (index) {
+            case 0:
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => NextPage(user)
+                  ));
+              break;
+            case 1:
 
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => Voter_UploadProfileImage()
-            ),
-          );
+              break;
+            case 2:
+
+              break;
+            case 3:
+              
+              break;
+          }
         },
+        items: [
+          Icon(Icons.home,),
+          Icon(Icons.favorite),
+          Icon(Icons.settings),
+          Icon(Icons.account_circle),
+
+        ],
       ),
       body: Center(
         child: Container(

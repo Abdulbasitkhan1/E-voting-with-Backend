@@ -1,3 +1,5 @@
+import 'package:app/Admin_users/users.dart';
+import 'package:app/Candidates.dart';
 import 'package:app/Voter_Profile/Profile.dart';
 import 'package:app/Voters.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -15,63 +17,34 @@ class NextPage extends StatelessWidget {
           index: 0,
           backgroundColor: Colors.white60, // Change the background color here
           color: Colors.blueAccent,
-          items: [
-            InkWell(
-              onTap: () {
-              },
-              child: Column(
-                children: [
-                  Icon(Icons.home),
-                  Text('Home'), // Add label
-                ],
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                // Handle the onTap event for the second item
-              },
-              child: Column(
-
-                children: [
-                  Icon(Icons.feed),
-                  Text('feed'), // Add label
-                ],
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                // Handle the onTap event for the second item
-              },
-              child: Column(
-
-                children: [
-                  Icon(Icons.question_answer_outlined),
-                  Text('FAQ'), // Add label
-                ],
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => ProfilePage(person)
-                  ),
-                );
-                // Handle the onTap event for the second item
-              },
-              child: Column(
-
-                children: [
-                  Icon(Icons.person),
-                  Text('Profile'), // Add label
-                ],
-              ),
-            ),
-          ],
+          animationDuration: Duration(milliseconds: 300),
           onTap: (index) {
+            switch (index) {
+              case 0:
+                break;
+              case 1:
 
+                break;
+              case 2:
+
+                break;
+              case 3:
+           
+            Navigator.push(
+            context,
+            MaterialPageRoute(
+            builder: (context) => ProfilePage((person))
+            ));
+                break;
+            }
           },
+          items: [
+          Icon(Icons.home,),
+            Icon(Icons.favorite),
+            Icon(Icons.settings),
+            Icon(Icons.account_circle),
+
+          ],
         ),
         body: Container());
   }

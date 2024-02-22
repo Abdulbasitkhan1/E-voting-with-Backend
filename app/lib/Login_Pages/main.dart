@@ -1,19 +1,29 @@
-import 'package:app/Admin_Profile/admin_profile.dart';
-import 'package:app/Admins.dart';
-import 'package:app/Candidate_Profile/Candidate_home.dart';
-import 'package:app/Candidates.dart';
 import 'package:app/SignUp_Pages/SignUpPage.dart';
 import 'package:app/Splash_screen.dart';
-import 'package:app/Voter_Profile/Profile.dart';
-import 'package:app/Voters.dart';
 import 'package:flutter/material.dart';
 import '../apiController.dart';
 
 void main() {
-  runApp(MyApp());
+  // Voters sampleUser = Voters(
+  //   Id_: 1,
+  //   First_Name: 'John',
+  //   Last_Name: 'Doe',
+  //   E_Mail: 'john.doe@example.com',
+  //   Password: 'password123',
+  //   Cnic: '1234567890',
+  //   Phone_No: '123-456-7890',
+  // );
+  //
+  // runApp(MyApp(sampleUser: sampleUser));
 }
+
 class MyApp extends StatelessWidget {
+  // final Voters sampleUser;
+  //
+  // MyApp({required this.sampleUser});
+
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,13 +33,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home: SplashScreen(),
       routes: {
-        '/': (context) => SplashScreen(),
+        '/': (context) => SplashScreen()
       },
     );
   }
 }
+
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
