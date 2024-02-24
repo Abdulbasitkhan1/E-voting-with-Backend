@@ -1,4 +1,5 @@
 import 'package:app/Admin_Profile/admin_profile.dart';
+import 'package:app/Admin_users/Admin_users.dart';
 import 'package:flutter/material.dart';
 
 import '../Admins.dart';
@@ -30,13 +31,13 @@ class Admin_Home extends StatelessWidget {
             NavigationDestination(
                 icon: InkWell(
                     onTap: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //       builder: (context) => Settings(),
-                      //     ));
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CandidateUsers()
+                          ));
                     },
-                    child: Icon(Icons.feed)), label: 'Feed'),
+                    child: Icon(Icons.supervised_user_circle_sharp)), label: 'Users'),
             NavigationDestination(
                 icon: InkWell(
                     onTap: () {
@@ -50,7 +51,7 @@ class Admin_Home extends StatelessWidget {
             NavigationDestination(
                 icon: InkWell(
                     onTap: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => admin_ProfilePage(admins)

@@ -1,44 +1,72 @@
+import 'package:app/Admin_Profile/Admin_home.dart';
+import 'package:app/Admin_users/Admin_users.dart';
+import 'package:app/Admins.dart';
 import 'package:app/SignUp_Pages/SignUpPage.dart';
 import 'package:app/Splash_screen.dart';
+import 'package:get/get.dart';
+import 'package:app/Voter_Profile/Profile.dart';
+import 'package:app/Voters.dart';
 import 'package:flutter/material.dart';
 import '../apiController.dart';
 
 void main() {
-  // Voters sampleUser = Voters(
-  //   Id_: 1,
-  //   First_Name: 'John',
-  //   Last_Name: 'Doe',
-  //   E_Mail: 'john.doe@example.com',
-  //   Password: 'password123',
-  //   Cnic: '1234567890',
-  //   Phone_No: '123-456-7890',
-  // );
-  //
-  // runApp(MyApp(sampleUser: sampleUser));
+  runApp(MyApp());
 }
-
 class MyApp extends StatelessWidget {
-  // final Voters sampleUser;
-  //
-  // MyApp({required this.sampleUser});
-
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       title: 'E-Voting System',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      // home: SplashScreen(),
       routes: {
-        '/': (context) => SplashScreen()
+        '/': (context) => CandidateUsers()
       },
     );
   }
 }
+
+// void main() {
+//   Admins sampleUser = Admins(
+//     Id_: 1,
+//     First_Name: 'John',
+//     Last_Name: 'Doe',
+//     E_Mail: 'john.doe@example.com',
+//     Password: 'password123',
+//     Cnic: '1234567890',
+//     Phone_No: '123-456-7890',
+//   );
+//
+//   runApp(MyApp(sampleUser: sampleUser));
+// }
+//
+// class MyApp extends StatelessWidget {
+//   final Admins sampleUser;
+//
+//   MyApp({required this.sampleUser});
+//
+//   static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return GetMaterialApp(
+//       navigatorKey: navigatorKey,
+//       debugShowCheckedModeBanner: false,
+//       title: 'E-Voting System',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       routes: {
+//         '/': (context) => Admin_Home(sampleUser)
+//       },
+//     );
+//   }
+// }
 
 
 class MyHomePage extends StatefulWidget {

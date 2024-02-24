@@ -58,16 +58,7 @@ class ProfilePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => NextPage(user),
-                ));
-          },
-          icon: const Icon(Icons.arrow_back),
-        ),
+
         title: Center(
           child: Text(
             'Profile',

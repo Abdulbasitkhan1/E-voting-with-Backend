@@ -1,6 +1,7 @@
 import 'package:app/Admin_Profile/Admin_UpdateFields.dart';
 import 'package:app/Admin_Profile/Admin_home.dart';
 import 'package:app/Admin_Profile/admin_pp.dart';
+import 'package:app/Admin_users/Admin_users.dart';
 import 'package:app/login_options.dart';
 import 'package:flutter/material.dart';
 
@@ -53,16 +54,6 @@ class admin_ProfilePage extends StatelessWidget {
     };
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Admin_Home(user,),
-                ));
-          },
-          icon: const Icon(Icons.arrow_back),
-        ),
         title: Center(
           child: Text(
             'Profile',
@@ -94,14 +85,23 @@ class admin_ProfilePage extends StatelessWidget {
           NavigationDestination(
               icon: InkWell(
                   onTap: () {
-                    Navigator.push(
+                    Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                           builder: (context) => Admin_Home(user),
                         ));
                   },
                   child: Icon(Icons.home)), label: 'Home'),
-          NavigationDestination(icon: Icon(Icons.feed), label: 'Feed'),
+          NavigationDestination(
+              icon: InkWell(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CandidateUsers()
+                        ));
+                  },
+                  child: Icon(Icons.supervised_user_circle_sharp)), label: 'Users'),
           NavigationDestination(
               icon: Icon(Icons.search_rounded), label: 'Search'),
           NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
@@ -191,7 +191,7 @@ class admin_ProfilePage extends StatelessWidget {
                     );
                   },
                   child: Text(
-                    'Update Profile Picture',
+                    'Update  Admin Profile Picture',
                     style: TextStyle(
                       fontSize: 15,  // Set your desired font size
                     ),
